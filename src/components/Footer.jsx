@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Instagram, Linkedin, Twitter, Facebook, Mail, MapPin, Phone, ArrowUp } from 'lucide-react';
+import { Instagram, Linkedin, Facebook, Youtube, Music, Mail, MapPin, Phone, ArrowUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import './Footer.css';
 
@@ -19,10 +19,11 @@ const Footer = () => {
                             Bringing stories to life through world-class 2D animation. We blend creativity with technical mastery to deliver impactful visual narratives.
                         </p>
                         <div className="footer-socials">
-                            <a href="#" aria-label="Instagram"><Instagram size={20} /></a>
-                            <a href="#" aria-label="LinkedIn"><Linkedin size={20} /></a>
-                            <a href="#" aria-label="Twitter"><Twitter size={20} /></a>
-                            <a href="#" aria-label="Facebook"><Facebook size={20} /></a>
+                            <a href="https://www.facebook.com/fscreationitfirm" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><Facebook size={20} /></a>
+                            <a href="https://www.instagram.com/fscreationitfirm/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><Instagram size={20} /></a>
+                            <a href="https://www.linkedin.com/company/fscreation/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><Linkedin size={20} /></a>
+                            <a href="https://www.youtube.com/@FSCreationit" target="_blank" rel="noopener noreferrer" aria-label="Youtube"><Youtube size={20} /></a>
+                            <a href="https://www.tiktok.com/@fs.creation45?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><Music size={20} /></a>
                         </div>
                     </div>
 
@@ -50,15 +51,23 @@ const Footer = () => {
                         <h4>Get in Touch</h4>
                         <div className="contact-item">
                             <Mail size={18} className="footer-icon" />
-                            <span>hello@fscreation.com</span>
+                            <span>fscreationitfirm@gmail.com</span>
                         </div>
                         <div className="contact-item">
                             <Phone size={18} className="footer-icon" />
-                            <span>+880 1234 567 890</span>
+                            <span>+880 1901-851585</span>
                         </div>
-                        <div className="contact-item">
+                        <div className="contact-item address">
                             <MapPin size={18} className="footer-icon" />
-                            <span>Dhaka, Bangladesh</span>
+                            <div>
+                                <strong>Head Office:</strong> Jhenaidah. 7300
+                            </div>
+                        </div>
+                        <div className="contact-item address">
+                            <MapPin size={18} className="footer-icon" />
+                            <div>
+                                <strong>Branch Office:</strong> Mirpur 11, Dhaka.
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -70,6 +79,9 @@ const Footer = () => {
                     <div className="footer-policy">
                         <a href="#">Privacy Policy</a>
                         <a href="#">Terms of Service</a>
+                    </div>
+                    <div className="developer-credit">
+                        <p>Developed by <a href="https://gmitsolution.net" target="_blank" rel="noopener noreferrer">GM IT Solution</a></p>
                     </div>
                     <button className="back-to-top" onClick={scrollToTop}>
                         <ArrowUp size={20} />

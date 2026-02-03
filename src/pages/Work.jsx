@@ -1,17 +1,33 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Play } from 'lucide-react';
+import { X } from 'lucide-react';
 import { projects, categories } from '../data/projects';
 import Team from '../components/Team';
 import '../components/Portfolio.css';
 
-// Reusing the logic from Portfolio.jsx but as a full page
 const Work = () => {
     const [filter, setFilter] = useState('All');
+    const [selectedProject, setSelectedProject] = useState(null);
 
     const filteredProjects = filter === 'All'
         ? projects
         : projects.filter(p => p.category === filter);
+
+    const getEmbedUrl = (url) => {
+        if (!url) return '';
+        if (url.includes('youtu.be')) {
+            const id = url.split('/').pop();
+            return `https://www.youtube.com/embed/${id}?autoplay=1`;
+        }
+        if (url.includes('youtube.com')) {
+            const id = new URLSearchParams(new URL(url).search).get('v');
+            return `https://www.youtube.com/embed/${id}?autoplay=1`;
+        }
+        if (url.includes('facebook.com')) {
+            return `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(url)}&show_text=0&width=560`;
+        }
+        return url;
+    };
 
     return (
         <div className="work-page" style={{ paddingTop: 'var(--header-height)', minHeight: '100vh', background: 'var(--bg-dark)' }}>
@@ -51,6 +67,7 @@ const Work = () => {
                                     animate={{ opacity: 1, scale: 1 }}
                                     exit={{ opacity: 0, scale: 0.9 }}
                                     className="portfolio-item"
+                                    onClick={() => setSelectedProject(project)}
                                 >
                                     <div className="portfolio-img-wrapper">
                                         <img src={project.img} alt={project.title} />
@@ -68,6 +85,44 @@ const Work = () => {
                     </motion.div>
                 </div>
             </section>
+
+            {/* Video Modal */}
+            <AnimatePresence>
+                {selectedProject && (
+                    <motion.div
+                        className="modal-overlay"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={() => setSelectedProject(null)}
+                    >
+                        <motion.div
+                            className="modal-content"
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.8, opacity: 0 }}
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <button className="modal-close" onClick={() => setSelectedProject(null)}>
+                                <X size={30} />
+                            </button>
+                            <div className="video-aspect-ratio">
+                                <iframe
+                                    src={getEmbedUrl(selectedProject.link)}
+                                    title={selectedProject.title}
+                                    frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                ></iframe>
+                            </div>
+                            <div className="modal-info">
+                                <h3>{selectedProject.title}</h3>
+                                {selectedProject.client && <span className="client">Client: {selectedProject.client}</span>}
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
 
             <Team />
         </div>

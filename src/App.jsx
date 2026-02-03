@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
@@ -6,7 +6,6 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Work from './pages/Work';
 import Footer from './components/Footer';
-import { useEffect } from 'react';
 
 // Scroll to top component
 const ScrollToTop = () => {
@@ -20,11 +19,21 @@ const ScrollToTop = () => {
 };
 
 function App() {
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
+
+  useEffect(() => {
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+  };
+
   return (
     <Router>
-      <div className="app">
+      <div className={`app ${theme}-theme`}>
         <ScrollToTop />
-        <Navbar />
+        <Navbar toggleTheme={toggleTheme} currentTheme={theme} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

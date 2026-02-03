@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, MapPin, Instagram, Linkedin, Twitter, Loader2 } from 'lucide-react';
+import { Mail, MapPin, Phone, Instagram, Linkedin, Facebook, Youtube, Music, Loader2 } from 'lucide-react';
 import './Contact.css';
 
 const Contact = () => {
@@ -52,17 +52,36 @@ const Contact = () => {
 
                         <div className="info-item">
                             <Mail className="icon" />
-                            <span>hello@fscreation.com</span>
+                            <span>fscreationitfirm@gmail.com</span>
                         </div>
                         <div className="info-item">
-                            <MapPin className="icon" />
-                            <span>123 Creative Ave, Design District, NY</span>
+                            <Phone className="icon" />
+                            <span>+880 1901-851585</span>
+                        </div>
+
+                        <div className="address-container">
+                            <div className="address-box">
+                                <MapPin className="icon" />
+                                <div>
+                                    <h5>Head Office (Jhenaidah)</h5>
+                                    <p>Nurjahan Palace (2nd Floor), In front of New Academy School, Arappur Bus Stand, Jhenaidah. 7300</p>
+                                </div>
+                            </div>
+                            <div className="address-box">
+                                <MapPin className="icon" />
+                                <div>
+                                    <h5>Branch Office (Dhaka)</h5>
+                                    <p>House No. 1 (6th Floor), Road No. 1, Section 7, Mirpur 11, Dhaka - 1216.</p>
+                                </div>
+                            </div>
                         </div>
 
                         <div className="social-links">
-                            <a href="#"><Instagram /></a>
-                            <a href="#"><Linkedin /></a>
-                            <a href="#"><Twitter /></a>
+                            <a href="https://www.facebook.com/fscreationitfirm" target="_blank" rel="noopener noreferrer"><Facebook /></a>
+                            <a href="https://www.instagram.com/fscreationitfirm/" target="_blank" rel="noopener noreferrer"><Instagram /></a>
+                            <a href="https://www.linkedin.com/company/fscreation/" target="_blank" rel="noopener noreferrer"><Linkedin /></a>
+                            <a href="https://www.youtube.com/@FSCreationit" target="_blank" rel="noopener noreferrer"><Youtube /></a>
+                            <a href="https://www.tiktok.com/@fs.creation45?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer"><Music /></a>
                         </div>
                     </div>
 
@@ -126,10 +145,6 @@ const Contact = () => {
                         </button>
                     </form>
                 </div>
-
-                <footer className="footer">
-                    <p>&copy; 2026 FS Creation. All rights reserved.</p>
-                </footer>
             </div>
         </section>
     );

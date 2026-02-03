@@ -1,23 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&display=swap');
 
+.light-theme {
+  --bg-dark: #f8fafc;
+  --bg-darker: #f1f5f9;
+  --bg-card: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --text-light: #ffffff;
+  --glass: rgba(0, 0, 0, 0.02);
+  --glass-border: rgba(0, 0, 0, 0.1);
+  --accent-glow: rgba(99, 102, 241, 0.2);
+}
+
 :root {
-  --bg-dark: #0a0a0a;
-  --bg-darker: #050505;
+  --bg-dark: #030014;
+  --bg-darker: #010103;
+  --bg-card: rgba(255, 255, 255, 0.01);
   --bg-light: #ffffff;
   --bg-light-alt: #f8f9fa;
-  
-  --text-main: #ffffff;
-  --text-muted: #a1a1aa;
+
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-light: #ffffff;
   --text-dark: #1a1a1a;
-  
+
   --accent: #6366f1;
-  --accent-glow: rgba(99, 102, 241, 0.5);
-  --gradient-1: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
-  
+  --accent-secondary: #0ea5e9;
+  --accent-glow: rgba(99, 102, 241, 0.4);
+  --gradient-1: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%);
+  --glass: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+
   --font-main: 'Outfit', sans-serif;
-  
+
   --container-width: 1200px;
   --header-height: 80px;
+
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 * {
@@ -26,10 +45,21 @@
   box-sizing: border-box;
 }
 
+html,
 body {
-  font-family: var(--font-main);
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  min-height: 100vh;
   background-color: var(--bg-dark);
   color: var(--text-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+  font-family: var(--font-main);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

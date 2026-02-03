@@ -25,10 +25,10 @@
 }
 
 .experience-box {
-    background: var(--bg-dark);
+    background: var(--bg-card);
     padding: 2.5rem;
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
     text-align: center;
     transition: all 0.3s ease;
 }

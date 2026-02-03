@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../assets/logo.jpg';
 import './Navbar.css';
 
-const Navbar = () => {
+const Navbar = ({ toggleTheme, currentTheme }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
@@ -52,10 +52,31 @@ const Navbar = () => {
           <Link to="/services" className="nav-link" onClick={() => setIsOpen(false)}>Services</Link>
           <Link to="/work" className="nav-link" onClick={() => setIsOpen(false)}>Work</Link>
           <span className="cta-btn" onClick={() => handleNavClick('contact')}>Let's Talk</span>
+
+          <motion.button
+            className="theme-toggle"
+            onClick={toggleTheme}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            aria-label="Toggle Theme"
+          >
+            {currentTheme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+          </motion.button>
         </div>
 
-        <div className="mobile-toggle" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+        <div className="nav-actions">
+          <motion.button
+            className="theme-toggle mobile-only"
+            onClick={toggleTheme}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            aria-label="Toggle Theme"
+          >
+            {currentTheme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+          </motion.button>
+          <div className="mobile-toggle" onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </div>
         </div>
       </div>
     </motion.nav>

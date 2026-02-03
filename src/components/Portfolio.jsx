@@ -1,16 +1,33 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Play } from 'lucide-react';
+import { Play, X } from 'lucide-react';
 import showreelImg from '../assets/showreel.png';
 import { projects, categories } from '../data/projects';
 import './Portfolio.css';
 
 const Portfolio = () => {
     const [filter, setFilter] = useState('All');
+    const [selectedProject, setSelectedProject] = useState(null);
 
     const filteredProjects = filter === 'All'
         ? projects
         : projects.filter(p => p.category === filter);
+
+    const getEmbedUrl = (url) => {
+        if (!url) return '';
+        if (url.includes('youtu.be')) {
+            const id = url.split('/').pop();
+            return `https://www.youtube.com/embed/${id}?autoplay=1`;
+        }
+        if (url.includes('youtube.com')) {
+            const id = new URLSearchParams(new URL(url).search).get('v');
+            return `https://www.youtube.com/embed/${id}?autoplay=1`;
+        }
+        if (url.includes('facebook.com')) {
+            return `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(url)}&show_text=0&width=560`;
+        }
+        return url;
+    };
 
     return (
         <section id="work" className="section-padding portfolio-section">
@@ -21,7 +38,7 @@ const Portfolio = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                 >
-                    <div className="showreel-wrapper">
+                    <div className="showreel-wrapper" onClick={() => setSelectedProject({ title: '2026 Showreel', link: 'https://youtu.be/MVPX66AY_xg' })}>
                         <img src={showreelImg} alt="FS Creation Showreel" className="showreel-cover" />
                         <div className="play-overlay">
                             <button className="play-btn">
@@ -57,6 +74,7 @@ const Portfolio = () => {
                                 animate={{ opacity: 1, scale: 1 }}
                                 exit={{ opacity: 0, scale: 0.9 }}
                                 className="portfolio-item"
+                                onClick={() => setSelectedProject(project)}
                             >
                                 <div className="portfolio-img-wrapper">
                                     <img src={project.img} alt={project.title} />
@@ -73,6 +91,44 @@ const Portfolio = () => {
                     </AnimatePresence>
                 </motion.div>
             </div>
+
+            {/* Video Modal */}
+            <AnimatePresence>
+                {selectedProject && (
+                    <motion.div
+                        className="modal-overlay"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={() => setSelectedProject(null)}
+                    >
+                        <motion.div
+                            className="modal-content"
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.8, opacity: 0 }}
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <button className="modal-close" onClick={() => setSelectedProject(null)}>
+                                <X size={30} />
+                            </button>
+                            <div className="video-aspect-ratio">
+                                <iframe
+                                    src={getEmbedUrl(selectedProject.link)}
+                                    title={selectedProject.title}
+                                    frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                ></iframe>
+                            </div>
+                            <div className="modal-info">
+                                <h3>{selectedProject.title}</h3>
+                                {selectedProject.client && <span className="client">Client: {selectedProject.client}</span>}
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </section>
     );
 };
