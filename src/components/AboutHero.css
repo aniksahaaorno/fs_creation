@@ -1,0 +1,89 @@
+.about-hero {
+    height: 70vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    margin-top: var(--header-height);
+}
+
+.about-hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.about-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8));
+    z-index: 1;
+}
+
+.about-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.about-hero-title {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+}
+
+.about-hero-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.about-hero-nav {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    z-index: 10;
+}
+
+.about-hero-nav button {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.about-hero-nav button:hover {
+    background: var(--accent);
+}
+
+.hero-dots {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.hero-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.hero-dot.active {
+    background: var(--accent);
+}

@@ -1,0 +1,150 @@
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: var(--bg-dark);
+}
+
+.hero-bg-gradient {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(99, 102, 241, 0.15) 0%, rgba(10, 10, 10, 0) 50%);
+    z-index: 0;
+    animation: moveBg 15s linear infinite;
+}
+
+@keyframes moveBg {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px !important;
+}
+
+.hero-eyebrow {
+    display: inline-block;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.hero-title {
+    font-size: 4.5rem;
+    line-height: 1.1;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    letter-spacing: -1px;
+}
+
+.hero-title .highlight {
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-text {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: var(--text-main);
+    color: var(--bg-dark);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    background: #e0e0e0;
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--text-main);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.hero-scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.mouse {
+    width: 25px;
+    height: 40px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    position: relative;
+}
+
+.wheel {
+    width: 4px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 2px;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scrollWheel 2s infinite;
+}
+
+@keyframes scrollWheel {
+    0% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(15px);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+}

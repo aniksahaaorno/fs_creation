@@ -1,0 +1,136 @@
+/* Base Team Styles */
+.team-section-grid,
+.team-section-slider {
+    background: var(--bg-darker);
+}
+
+.section-header.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3rem;
+}
+
+.slider-controls {
+    display: flex;
+    gap: 1rem;
+}
+
+.slider-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.slider-btn:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    transform: scale(1.1);
+}
+
+/* Grid Layout */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 3rem 2rem;
+}
+
+/* Carousel / Slider Layout */
+.team-slider-container {
+    overflow-x: auto;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    cursor: grab;
+    padding-bottom: 2rem;
+}
+
+.team-slider-container::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera */
+}
+
+.team-slider-track {
+    display: flex;
+    gap: 2rem;
+}
+
+.team-slider-item {
+    flex: 0 0 calc(33.333% - 1.35rem);
+    /* Show 3 cards usually */
+    min-width: 300px;
+}
+
+/* Common Card Styles */
+.team-card {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+}
+
+.member-img-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1.1;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    background: #1a1a1a;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.member-img-full {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    filter: grayscale(20%);
+}
+
+.team-card:hover .member-img-full {
+    transform: scale(1.05);
+    filter: grayscale(0%);
+}
+
+.member-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.4rem;
+    font-weight: 700;
+}
+
+.member-info .role {
+    color: var(--accent);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+    .team-slider-item {
+        flex: 0 0 calc(50% - 1rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .team-slider-item {
+        flex: 0 0 80%;
+    }
+
+    .section-header.flex-between {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+}
