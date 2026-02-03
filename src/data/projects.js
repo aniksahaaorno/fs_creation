@@ -40,18 +40,18 @@ export const projects = [
     },
     {
         id: 5,
-        title: 'Social Ad 1',
+        title: 'কার্টুন দেখে বড় হওয়া',
         category: 'Ads',
         img: p1,
-        client: 'Social Media',
+        client: 'FS Creation',
         link: 'https://www.facebook.com/reel/1725121848158702'
     },
     {
         id: 6,
-        title: 'Social Ad 2',
+        title: 'Human to 2D Transformation',
         category: 'Ads',
         img: p2,
-        client: 'Social Media',
+        client: 'FS Creation',
         link: 'https://www.facebook.com/reel/797689699947673'
     }
 ];

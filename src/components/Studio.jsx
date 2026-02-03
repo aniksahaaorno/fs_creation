@@ -4,8 +4,8 @@ import { Quote } from 'lucide-react';
 import './Studio.css';
 
 const testimonials = [
-    { text: "FS Creation transformed our brand. The animation was not just beautiful, it drove real results.", author: "Mark Thompson, CEO TechFlow (USA)" },
-    { text: "Professional, creative, and on time. A world-class studio experience.", author: "Liu Wei, Marketing Director (Singapore)" }
+    { text: "FS Creation transformed our brand. The animation was not just beautiful, it drove real results.", author: "MD Ashraful Islam, CEO, GM International" },
+    { text: "Professional, creative, and on time. A world-class studio experience.", author: "Morium Akter, Managing Director, Graphics Multimedia" }
 ];
 
 const Studio = () => {
