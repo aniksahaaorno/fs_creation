@@ -40,7 +40,7 @@ const Hero = () => {
                 >
                     <source src={videos[currentSlide]} type="video/mp4" />
                 </video>
-                <div className="hero-overlay"></div>
+
             </div>
 
             <div className="container hero-content">
@@ -49,16 +49,7 @@ const Hero = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <span className="hero-eyebrow">Creative 2D Animation Studio</span>
-                    <h1 className="hero-title">
-                        We Bring Stories to Life <br />
-                        <span className="highlight">Through 2D Animation.</span>
-                    </h1>
-                    <p className="hero-text">
-                        FS Creation is a world-class animation studio extracting emotional narratives from ideas and crafting them into stunning visuals.
-                    </p>
-
-                    <div className="hero-btns">
+                    <div >
                         <Link to="/work" className="btn btn-primary">
                             View Our Work <Play size={18} fill="currentColor" />
                         </Link>

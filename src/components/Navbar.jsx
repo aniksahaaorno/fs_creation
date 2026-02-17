@@ -51,6 +51,7 @@ const Navbar = ({ toggleTheme, currentTheme }) => {
           <Link to="/about" className="nav-link" onClick={() => setIsOpen(false)}>About</Link>
           <Link to="/services" className="nav-link" onClick={() => setIsOpen(false)}>Services</Link>
           <Link to="/work" className="nav-link" onClick={() => setIsOpen(false)}>Work</Link>
+          <Link to="/course" className="nav-link" onClick={() => setIsOpen(false)}>Course</Link>
           <span className="cta-btn" onClick={() => handleNavClick('contact')}>Let's Talk</span>
 
           <motion.button

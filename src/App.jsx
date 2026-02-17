@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
 import Work from './pages/Work';
+import Course from './pages/Course';
 import Footer from './components/Footer';
 
 // Scroll to top component
@@ -39,6 +40,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/work" element={<Work />} />
+          <Route path="/course" element={<Course />} />
         </Routes>
         <Footer />
       </div>
