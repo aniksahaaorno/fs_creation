@@ -154,6 +154,9 @@ const Course = () => {
                             <a href="https://drive.google.com/file/d/1Kr1vb2j1vji7gRkEuSxIOtp5JGuVjlvk/view" target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-lg">
                                 <Play size={20} /> Watch Demo Class
                             </a>
+                            <a href="https://wa.me/8801901851585?text=Hello,%20I%20want%20to%20book%20a%20free%20session%20for%20the%20animation%20course." target="_blank" rel="noopener noreferrer" className="btn btn-accent btn-lg">
+                                <MessageCircle size={20} /> Book a Free Session
+                            </a>
                         </div>
 
                     </motion.div>
@@ -313,9 +316,14 @@ const Course = () => {
                 <div className="container text-center">
                     <h2>ক্যারিয়ার গড়ুন অ্যানিমেশন ইন্ডাস্ট্রিতে</h2>
                     <p>আজই এনরোল করুন এবং শুরু করুন আপনার অ্যানিমেশন জার্নি</p>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSePqZZ-Ddn9Po81tpWr16S5bpzFVQgfEJvvMEAU7KJhG1hrYA/viewform" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">
-                        Enroll Now
-                    </a>
+                    <div className="cta-group justify-center mt-3">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSePqZZ-Ddn9Po81tpWr16S5bpzFVQgfEJvvMEAU7KJhG1hrYA/viewform" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">
+                            Enroll Now
+                        </a>
+                        <a href="https://wa.me/8801901851585?text=Hello,%20I%20want%20to%20book%20a%20free%20session%20for%20the%20animation%20course." target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-lg">
+                            <MessageCircle size={20} /> Book a Free Session
+                        </a>
+                    </div>
                 </div>
             </section>
         </div>

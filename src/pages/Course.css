@@ -99,6 +99,26 @@
     display: flex;
     justify-content: center;
     gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.mt-3 {
+    margin-top: 2rem;
+}
+
+.btn-accent {
+    background: var(--accent);
+    color: white;
+}
+
+.btn-accent:hover {
+    background: var(--accent-secondary);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px var(--accent-glow);
 }
 
 .note {
