@@ -26,6 +26,14 @@ const Course = () => {
         visible: { opacity: 1, y: 0 }
     };
 
+    // Facebook Pixel Tracking Function
+    const trackEvent = (eventName, eventData = {}) => {
+        if (window.fbq) {
+            window.fbq('track', eventName, eventData);
+        }
+    };
+
+
     const modules = [
         {
             title: "Module 1: Animation & Design Basics",
@@ -148,13 +156,31 @@ const Course = () => {
                         </div>
 
                         <div className="cta-group">
-                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSePqZZ-Ddn9Po81tpWr16S5bpzFVQgfEJvvMEAU7KJhG1hrYA/viewform" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">
+                            <a
+                                href="https://docs.google.com/forms/d/e/1FAIpQLSePqZZ-Ddn9Po81tpWr16S5bpzFVQgfEJvvMEAU7KJhG1hrYA/viewform"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn btn-primary btn-lg"
+                                onClick={() => trackEvent('Lead', { content_name: 'Enroll Now - Top' })}
+                            >
                                 Enroll Now
                             </a>
-                            <a href="https://drive.google.com/file/d/1Kr1vb2j1vji7gRkEuSxIOtp5JGuVjlvk/view" target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-lg">
+                            <a
+                                href="https://drive.google.com/file/d/1Kr1vb2j1vji7gRkEuSxIOtp5JGuVjlvk/view"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn btn-outline btn-lg"
+                                onClick={() => trackEvent('ViewContent', { content_name: 'Demo Class Video' })}
+                            >
                                 <Play size={20} /> Watch Demo Class
                             </a>
-                            <a href="https://wa.me/8801901851585?text=Hello,%20I%20want%20to%20book%20a%20free%20session%20for%20the%20animation%20course." target="_blank" rel="noopener noreferrer" className="btn btn-accent btn-lg">
+                            <a
+                                href="https://docs.google.com/forms/d/e/1FAIpQLSctu7bIsDIl2qdDpMUfOJSa1v8WfAelJJ8c1SclRW-FC1mRmg/viewform"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn btn-accent btn-lg"
+                                onClick={() => trackEvent('Schedule', { content_name: 'Free Session - Top' })}
+                            >
                                 <MessageCircle size={20} /> Book a Free Session
                             </a>
                         </div>
@@ -317,10 +343,22 @@ const Course = () => {
                     <h2>ক্যারিয়ার গড়ুন অ্যানিমেশন ইন্ডাস্ট্রিতে</h2>
                     <p>আজই এনরোল করুন এবং শুরু করুন আপনার অ্যানিমেশন জার্নি</p>
                     <div className="cta-group justify-center mt-3">
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSePqZZ-Ddn9Po81tpWr16S5bpzFVQgfEJvvMEAU7KJhG1hrYA/viewform" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">
+                        <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSePqZZ-Ddn9Po81tpWr16S5bpzFVQgfEJvvMEAU7KJhG1hrYA/viewform"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn btn-primary btn-lg"
+                            onClick={() => trackEvent('Lead', { content_name: 'Enroll Now - Bottom' })}
+                        >
                             Enroll Now
                         </a>
-                        <a href="https://wa.me/8801901851585?text=Hello,%20I%20want%20to%20book%20a%20free%20session%20for%20the%20animation%20course." target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-lg">
+                        <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSctu7bIsDIl2qdDpMUfOJSa1v8WfAelJJ8c1SclRW-FC1mRmg/viewform"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn btn-outline btn-lg"
+                            onClick={() => trackEvent('Schedule', { content_name: 'Free Session - Bottom' })}
+                        >
                             <MessageCircle size={20} /> Book a Free Session
                         </a>
                     </div>
