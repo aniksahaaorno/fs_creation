@@ -186,6 +186,91 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+/* Batch Details Section */
+.batch-details-section {
+    padding: 4rem 0;
+    background: var(--bg-dark);
+}
+
+.batch-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    padding: 3rem;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.batch-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.batch-header h2 {
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+.batch-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+.batch-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.batch-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.batch-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.batch-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--accent);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+    box-shadow: 0 8px 20px var(--accent-glow);
+}
+
+.batch-text h4 {
+    color: var(--text-main);
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.batch-text p {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 992px) {
+    .batch-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Curriculum/Modules */
 .curriculum-section {
     background: var(--bg-dark);

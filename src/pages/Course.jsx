@@ -136,16 +136,16 @@ const Course = () => {
 
                         <div className="course-meta">
                             <div className="meta-item">
-                                <Clock size={20} />
-                                <span>সময়কাল: ৩ মাস</span>
-                            </div>
-                            <div className="meta-item">
-                                <BookOpen size={20} />
-                                <span>মোট ক্লাস: ৩০টি</span>
-                            </div>
-                            <div className="meta-item">
                                 <Calendar size={20} />
-                                <span>সপ্তাহে ৩ দিন</span>
+                                <span>১ এপ্রিল - ৩০শে জুন</span>
+                            </div>
+                            <div className="meta-item">
+                                <Clock size={20} />
+                                <span>রাত ১০:০০ - ১১:৩০</span>
+                            </div>
+                            <div className="meta-item">
+                                <Users size={20} />
+                                <span>সপ্তাহে ৩ দিন (শনি, সোম, বুধ)</span>
                             </div>
                         </div>
 
@@ -232,6 +232,46 @@ const Course = () => {
                             </div>
                         </motion.div>
                     </div>
+                </div>
+            </section>
+
+            {/* Batch Details Section */}
+            <section className="batch-details-section">
+                <div className="container">
+                    <motion.div
+                        className="batch-card"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                    >
+                        <div className="batch-header">
+                            <h2>ভর্তির সময়সীমা ও ক্লাসের সময়সূচী</h2>
+                            <p>সরাসরি লাইভ ক্লাসের মাধ্যমে শেখানো হবে</p>
+                        </div>
+                        <div className="batch-grid">
+                            <div className="batch-item">
+                                <div className="batch-icon"><Calendar /></div>
+                                <div className="batch-text">
+                                    <h4>ক্লাস শুরু ও শেষ</h4>
+                                    <p>১ এপ্রিল থেকে ৩০শে জুন পর্যন্ত</p>
+                                </div>
+                            </div>
+                            <div className="batch-item">
+                                <div className="batch-icon"><Clock /></div>
+                                <div className="batch-text">
+                                    <h4>ক্লাসের দিন</h4>
+                                    <p>শনিবার, সোমবার ও বুধবার</p>
+                                </div>
+                            </div>
+                            <div className="batch-item">
+                                <div className="batch-icon"><Video /></div>
+                                <div className="batch-text">
+                                    <h4>ক্লাসের সময়</h4>
+                                    <p>রাত ১০:০০ টা থেকে ১১:৩০ টা</p>
+                                </div>
+                            </div>
+                        </div>
+                    </motion.div>
                 </div>
             </section>
 
