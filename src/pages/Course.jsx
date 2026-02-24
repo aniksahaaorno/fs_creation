@@ -132,7 +132,7 @@ const Course = () => {
                     >
                         <span className="badge">Premium Course</span>
                         <h1>FS Creation – 2D Animation & Creative Video Course</h1>
-                        <p className="subtitle">ঘরে বসে ৩০ দিনের লাইভ ব্যাচে কমপ্লিট ২ডি অ্যানিমেশন শিখুন</p>
+                        <p className="subtitle">ঘরে বসেই ৩০ দিনের লাইভ ব্যাচে সম্পূর্ণ ২ডি অ্যানিমেশন শিখুন — মোট ৩০টি ইন্টার‌্যাকটিভ ক্লাসে ধাপে ধাপে ফুল গাইডলাইনসহ।</p>
 
                         <div className="course-meta">
                             <div className="meta-item">
@@ -377,6 +377,34 @@ const Course = () => {
                 </div>
             </section>
 
+            {/* WhatsApp Contact Section */}
+            <section className="whatsapp-contact-section">
+                <div className="container">
+                    <motion.div
+                        className="whatsapp-banner"
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                    >
+                        <div className="whatsapp-content">
+                            <div className="whatsapp-icon-bg">
+                                <MessageCircle size={32} />
+                            </div>
+                            <h3>কোনো কিছু বিস্তারিত জানতে চাইলে হোয়াটসঅ্যাপ করুন</h3>
+                        </div>
+                        <a
+                            href="https://wa.me/8801901851585"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="whatsapp-btn"
+                        >
+                            <span>01901-851585</span>
+                            <div className="wa-chip">Connect</div>
+                        </a>
+                    </motion.div>
+                </div>
+            </section>
+
             {/* Bottom CTA */}
             <section className="cta-section">
                 <div className="container text-center">
@@ -404,6 +432,17 @@ const Course = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Floating WhatsApp Button */}
+            <a
+                href="https://wa.me/8801901851585"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="floating-wa"
+                title="WhatsApp Us"
+            >
+                <MessageCircle size={30} />
+            </a>
         </div>
     );
 };
